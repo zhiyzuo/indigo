@@ -13,6 +13,7 @@ author: zhiyzuo
 description: using Python to viualize dot-whisker regression coefficients
 ---
 
+
 Today I spent some time to work out better visualizations for a manuscript in Python using Matplotlib. I figured I should write it down because there are really very few resource on this!
 
 <div class="breaker"></div>
@@ -54,20 +55,7 @@ df.head()
 ```
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
+<table class="table">
   <thead>
     <tr style="text-align: right;">
       <th></th>
@@ -157,7 +145,8 @@ lin_reg.summary()
 
 
 
-<table class="simpletable">
+<div >
+<table class="table">
 <caption>OLS Regression Results</caption>
 <tr>
   <th>Dep. Variable:</th>        <td>fertility</td>    <th>  R-squared:         </th> <td>   0.707</td>
@@ -187,7 +176,9 @@ lin_reg.summary()
   <th>Covariance Type:</th>      <td>nonrobust</td>    <th>                     </th>     <td> </td>   
 </tr>
 </table>
-<table class="simpletable">
+
+
+<table class="table">
 <tr>
        <td></td>          <th>coef</th>     <th>std err</th>      <th>t</th>      <th>P>|t|</th>  <th>[0.025</th>    <th>0.975]</th>  
 </tr>
@@ -210,7 +201,8 @@ lin_reg.summary()
   <th>infant_mort</th> <td>    1.0770</td> <td>    0.382</td> <td>    2.822</td> <td> 0.007</td> <td>    0.306</td> <td>    1.848</td>
 </tr>
 </table>
-<table class="simpletable">
+
+<table class="table">
 <tr>
   <th>Omnibus:</th>       <td> 0.058</td> <th>  Durbin-Watson:     </th> <td>   1.454</td>
 </tr>
@@ -224,6 +216,7 @@ lin_reg.summary()
   <th>Kurtosis:</th>      <td> 2.764</td> <th>  Cond. No.          </th> <td>    807.</td>
 </tr>
 </table>
+</div>
 
 
 
@@ -238,9 +231,6 @@ Now that we obtained the result, we need three things for building the coefficie
 lin_reg.params
 ```
 
-
-
-
     Intercept      66.915182
     agri           -0.172114
     exam           -0.258008
@@ -248,9 +238,6 @@ lin_reg.params
     catholic        0.104115
     infant_mort     1.077048
     dtype: float64
-
-
-
 
 ```python
 lin_reg.conf_int()
@@ -260,20 +247,7 @@ lin_reg.conf_int()
 
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table class="dataframe">
+<table class="table table-sm">
   <thead>
     <tr style="text-align: right;">
       <th></th>
@@ -349,20 +323,7 @@ coef_df
 ```
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table class="dataframe">
+<table class="table table-sm">
   <thead>
     <tr style="text-align: right;">
       <th></th>
@@ -502,18 +463,12 @@ mod_1.params
 
     fertility ~ agri + exam + edu + catholic
 
-
-
-
-
     Intercept    91.055424
     agri         -0.220646
     exam         -0.260582
     edu          -0.961612
     catholic      0.124418
     dtype: float64
-
-
 
 
 ```python
@@ -525,19 +480,12 @@ mod_2.params
 
     fertility ~ agri + exam + edu + infant_mort
 
-
-
-
-
     Intercept      68.773136
     agri           -0.129292
     exam           -0.687994
     edu            -0.619649
     infant_mort     1.307097
     dtype: float64
-
-
-
 
 ```python
 coef_df = pd.DataFrame()
@@ -556,20 +504,7 @@ coef_df
 
 
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table class="dataframe">
+<table class="table">
   <thead>
     <tr style="text-align: right;">
       <th></th>
