@@ -43,7 +43,7 @@ Therefore, I decided to try using [matplotlib](https://matplotlib.org/api/_as_ge
 
 ---
 
-#### Data preparation
+### Data preparation
 
 Let's play with the [swiss dataset](https://raw.githubusercontent.com/vincentarelbundock/Rdatasets/master/csv/datasets/swiss.csv).
 
@@ -371,9 +371,9 @@ coef_df
 
 ---
 
-#### Let's plot!
+### Let's plot!
 
-##### Basic `coefplot`
+#### Basic `coefplot`
 
 The basic idea is that we plot a bar chart ___without facecolors___, and then we can add scatter plots to annotate the coefficients values by markers.
 
@@ -398,7 +398,7 @@ _ = ax.set_xticklabels(['Agriculture', 'Exam', 'Edu.', 'Catholic', 'Infant Mort.
 ![png](/assets/images/Plot-Regression-Coefficient/output_27_0.png)
 
 
-##### Control/study variables?
+#### Control/study variables?
 
 Sometimes we may want to annotate which are control variables and which are study variables. We use use [Axes.annotate](https://matplotlib.org/api/_as_gen/matplotlib.axes.Axes.annotate.html) to highlight them! Let's say we want to highlight the last two as study variables.
 
@@ -442,7 +442,7 @@ _ = ax.annotate('Study', xy=(0.8, -0.2), xytext=(0.8, -0.3),
 
 ---
 
-#### Multiple models
+### Multiple models
 
 It's also very easy to generalize this barchart to incorporate multiple models' results by shifting barchart's X axis positions.
 
@@ -451,7 +451,7 @@ let's say we have two models:
 - Three controls plus ___Catholic___
 - Three controls plus ___Infant Mort.___
 
-##### Collect coefficients
+#### Collect coefficients
 
 
 ```python
@@ -577,7 +577,7 @@ coef_df
 
 
 
-##### Plot!
+#### Plot!
 
 
 ```python
