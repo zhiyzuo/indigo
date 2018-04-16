@@ -25,7 +25,28 @@ Error: package or namespace load failed for ‘rJava’:
   Reason: image not found
 ```
 
-The following steps may help to resolve this. ___The final solution is inspired by [@tractatus](https://github.com/tractatus)'s answer to [this issue](https://github.com/velocyto-team/velocyto.R/issues/2).___
+### `rJava` works in R but not RStudio
+In this case, try the following code in RStudio:
+```r
+> dyn.load('/Library/Java/JavaVirtualMachines/jdk1.8.0_162.jdk/Contents/Home/jre/lib/server/libjvm.dylib')
+```
+
+Note that you need to confirm the version of your JVM first. You can do this by running the following in [terminal](https://support.apple.com/guide/terminal/access-the-shell-apd5265185d-f365-44cb-8b09-71a064a42125/mac):
+
+```bash
+~$ ls /Library/Java/JavaVirtualMachines/
+```
+
+Mine gives me the following output because I have both Java 8 and 9:
+```bash
+jdk-9.0.1.jdk    jdk1.8.0_162.jdk
+```
+
+After running `dyn.load()` in RStudio, trying loading `rJava` and it should work now. If not, try the following steps.
+
+
+### Installing Java, `jenv`, and `rJava` from scratch
+The following steps may help to resolve this if you do not have Java installed. ___The final solution is inspired by [@tractatus](https://github.com/tractatus)'s answer to [this issue](https://github.com/velocyto-team/velocyto.R/issues/2).___
 
 0. Open the [terminal](https://support.apple.com/guide/terminal/access-the-shell-apd5265185d-f365-44cb-8b09-71a064a42125/mac)
 
@@ -88,5 +109,7 @@ LDFLAGS=-L/usr/local/Cellar/gcc/7.2.0/lib
 > library(rJava)
 > .jinit()
 ```
+
+6. If this only works in R but not RStudio, try to run the command `dyn.load` as mentioned above.
 
 If the error mentioned above does not show up, then we are good!
