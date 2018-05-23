@@ -184,7 +184,7 @@ Ttest_1sampResult(statistic=4.990214882983107, pvalue=3.5816973971922974e-06)
 ```
 
 
-Several tests exist for equal variance, with different alternative hypotheses. Let's go with Breusch-Pagan test as an example. More can be found [here](http://www.statsmodels.org/stable/diagnostic.html). Small p-value (`pval` below) also shows that there is no violation of homoscedasticity.
+Several tests exist for equal variance, with different alternative hypotheses. Let's go with Breusch-Pagan test as an example. More can be found [here](http://www.statsmodels.org/stable/diagnostic.html). Small p-value (`pval` below) shows that ___there is violation of homoscedasticity___.
 
 
 ```python
@@ -192,6 +192,8 @@ Several tests exist for equal variance, with different alternative hypotheses. L
 > pval, f_pval
 (6.448482473013975e-08, 2.21307383960346e-08)
 ```
+
+Usually assumption violations are not independent of each other. Having one violations may lead to another. In this case, we see that both linearity and homoscedasticity are not met. Possible data transformation such as log, [Box-Cox power transformation](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.boxcox.html), and other fixes may be needed to get a better regression outcome.
 
 
 #### Normality
@@ -209,13 +211,4 @@ We can apply [___normal probability plot___](https://docs.scipy.org/doc/scipy/re
 
 ![png](/assets/images/Linear-Regression-Diagnostic-in-Python/output_26_0.png)
 
-
-It seems like it is okay. Similar to the previous validation procedure, we can apply a hypothesis test called ___Anderson-Darling___ test:
-
-
-```python
-> statsmodels.stats.diagnostic.normal_ad(residual)
-(1.117389381557743, 0.005962347061074244)
-```
-
-The low p-value agrees with the good fit above ($r^2=0.95$)
+The good fit indicates that normality is a reasonable approximation.
