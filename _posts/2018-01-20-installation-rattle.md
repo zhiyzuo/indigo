@@ -14,6 +14,32 @@ description: A brief note on how to install rattle/RGtk2 on macOS
 
 ### Installing Rattle on MacOS 10.11 (or above)
 
+Guys, great news! Follow [Yihui's comment](http://disq.us/p/1t8amd6) below and use the 20-line code to install `Rattle` without any effort! Just copy and paste the codes in R/RStudio - it just works like a charm!
+
+I copy Yihui's code below:
+
+```R
+system('brew install gtk+')
+
+local({
+  if (Sys.info()[['sysname']] != 'Darwin') return()
+
+  .Platform$pkgType = 'mac.binary.el-capitan'
+  unlockBinding('.Platform', baseenv())
+  assign('.Platform', .Platform, 'package:base')
+  lockBinding('.Platform', baseenv())
+
+  options(
+    pkgType = 'both', install.packages.compile.from.source = 'always',
+    repos = 'https://macos.rbind.org'
+  )
+})
+
+install.packages(c('RGtk2', 'cairoDevice', 'rattle'))
+```
+
+<div class="breaker"></div>
+
 This document describes steps to successfully install `Rattle` [R Analytic Tool To Learn Easily](https://cran.r-project.org/web/packages/rattle/index.html) on macOS 10.11 or above. If you have a macOS lower than 10.11, I recommend you upgrade your system to the newest one ([10.12 macOS Sierra](https://itunes.apple.com/us/app/macos-sierra/id1127487414?mt=12) using `App Store`. Without macOS 10.11 or above, you cannot install `R 3.4`, let alone `RGtk2`, which now only supports the newest `R` version.
 
 Throughout the steps to get your `Rattle` working, we will be using `Terminal`. You can open it by using [`Spotlight Search`](https://support.apple.com/en-us/HT204014) (you can open it by <kbd>command</kbd>+<kbd>space</kbd>, which is the default shortcut). Type `terminal` and you will be able to find it and open it.
