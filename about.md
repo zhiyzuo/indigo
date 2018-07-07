@@ -23,6 +23,11 @@ I like to write packages to facilitate my own research. Hope the following can b
 ---
 ### Papers
 
+#### 2018
+__Zuo, Z.__, & Zhao, K. (2018). The more multidisciplinary the better? – The prevalence and interdisciplinarity of research collaborations in multidisciplinary institutions. Journal of Informetrics, 12(3), 736–756. https://doi.org/10.1016/J.JOI.2018.06.006
+
+__Zuo, Z.__, & Zhao, K. (2018). A Graphical Model for Topical Impact over Time. In Proceedings of the 18th ACM/IEEE on Joint Conference on Digital Libraries (pp. 405-406). ACM.
+
 #### 2017
 __Zuo, Z.__, Zhao, K., & Eichmann, D. (2017). The State and Evolution of U.S. iSchools -- from Talent Acquisitions to Research Outcome. Journal of the Association for Information Science and Technology, 68(5), 1266–1277. https://doi.org/10.1002/asi.23751
 
