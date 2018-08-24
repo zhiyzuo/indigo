@@ -16,7 +16,7 @@ description: A brief note on how to install rattle/RGtk2 on macOS
 
 Guys, great news! Follow [Yihui's comment](http://disq.us/p/1t8amd6) below and use the 20-line code to install `Rattle` without any effort! Just copy and paste the codes in R/RStudio - it just works like a charm!
 
-I copy Yihui's code below:
+Note that you need to install [Homebrew](https://brew.sh/) first (step 3 below). Next you can run Yihui's code, which is copied below:
 
 ```R
 system('brew install gtk+')
