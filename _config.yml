@@ -11,6 +11,8 @@ markdown: kramdown
 kramdown:
   math_engine: mathjax
 
+highlighter: rouge
+
 # if it's an external image, update below for true
 # better with square images
 external-image: false
