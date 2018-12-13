@@ -6,7 +6,7 @@ layout: page
 
 ---
 ### About me 
-I am a 4th-Year PhD student in [Information Science](https://informatics.uiowa.edu/) at the University of Iowa, under the supervision of [Prof. Kang Zhao](https://www.biz.uiowa.edu/faculty/kangzhao/). My research interests are data science, text mining, social and business network analytics. Specifically, I am interested in empirical anlaytics of teamwork and collaboration, hiring , and supply chain networks.
+I am a 5th-Year PhD candidate in [Information Science](https://informatics.uiowa.edu/) at the University of Iowa, under the supervision of [Prof. Kang Zhao](https://www.biz.uiowa.edu/faculty/kangzhao/). My research interests are data science, text mining, social and business network analytics. Specifically, I am interested in data-driven anlaytics of teamwork and collaboration, hiring , and supply chain networks.
 
 ---
 ### Packages 
