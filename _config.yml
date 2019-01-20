@@ -110,6 +110,8 @@ scholar:
     sort_by: year
     order: descending
     group_by: keywords
+    repository: ./assets/papers
+    bibliography_template: bibstyle
 
 plugins:
   - jekyll-seo-tag
