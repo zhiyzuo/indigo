@@ -103,12 +103,21 @@ show-author: true
 # do you want some animations?
 animation: true
 
+scholar:
+    style: apa
+    source: ./assets
+    bibliography: pub.bib
+    sort_by: year
+    order: descending
+    group_by: keywords
+
 plugins:
   - jekyll-seo-tag
   - jekyll-gist
   - jekyll-feed
   - jemoji
   - jekyll-admin
+  - jekyll-scholar
 
 jekyll-mentions:
     base_url: https://github.com
